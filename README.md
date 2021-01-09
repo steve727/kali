@@ -10,3 +10,15 @@
         iface eth0 inet static
         address 192.168.254.9/24
         gateway 192.168.254.254
+        
+    sudo systemctl restart networking.service
+    
+    ip a 
+    
+    sudo rm /etc/resolv.conf
+    sudo vim /etc/resolv.conf
+    
+        nameserver 8.8.8.8
+        
+    
+    
