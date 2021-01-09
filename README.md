@@ -7,6 +7,14 @@
     
     sudo apt autoremove -y
     
+    sudo apt autoclean -y
+    sudo apt clean -y
+
+# Add a normal user
+    useradd -m -G sudo -s /bin/bash steve
+    passwd steve
+    echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers    
+    
 # Set static ip
     sudo vim /etc/network/interfaces
 
