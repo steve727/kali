@@ -34,6 +34,7 @@
         
     sudo chattr +i /etc/resolv.conf
 
-        
+# Boot without gui
+    sudo systemctl set-default multi-user.target
     
     
