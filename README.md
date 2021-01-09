@@ -8,5 +8,5 @@
 
         auto eth0
         iface eth0 inet static
-        address 192.168.0.100/24
-        gateway 192.168.0.1
+        address 192.168.254.9/24
+        gateway 192.168.254.254
