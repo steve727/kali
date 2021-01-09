@@ -2,7 +2,11 @@
     apt-get update
     apt-get upgrade
     apt-get dist-upgrade
-
+    
+    sudo apt update && sudo apt full-upgrade -y
+    
+    sudo apt autoremove -y
+    
 # Set static ip
     sudo vim /etc/network/interfaces
 
@@ -19,6 +23,9 @@
     sudo vim /etc/resolv.conf
     
         nameserver 8.8.8.8
+        
+    sudo chattr +i /etc/resolv.conf
+
         
     
     
