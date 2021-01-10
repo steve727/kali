@@ -42,3 +42,8 @@
     
     sudo python -m SimpleHTTPServer 80
     
+# Bettercap
+    apt install bettercap
+    
+    
+    
