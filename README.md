@@ -38,6 +38,7 @@
     systemctl get-default
     sudo systemctl set-default multi-user.target
 
-
+# Simple python http server
     
+    sudo python -m SimpleHTTPServer 80
     
