@@ -53,5 +53,6 @@
     
 # bettercap
     bettercap --iface wlan1mon
-    wifi.recon
+    wifi.recon on
+    
     
