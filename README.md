@@ -54,5 +54,5 @@
 # bettercap
     bettercap --iface wlan1mon
     wifi.recon on
-    
+    wifi.show
     
