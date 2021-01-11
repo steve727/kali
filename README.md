@@ -45,5 +45,9 @@
 # Bettercap
     apt install bettercap
     
+# airmon-ng
+    airmon-ng check kill
+    airmon-ng start wlan1
+    iwconfig
     
     
