@@ -49,5 +49,7 @@
     airmon-ng check kill
     airmon-ng start wlan1
     iwconfig
+    sudo airodump-ng -c 9 wlan1mon
+    
     
     
