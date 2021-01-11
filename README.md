@@ -51,5 +51,7 @@
     iwconfig
     sudo airodump-ng -c 9 wlan1mon
     
-    
+# bettercap
+    bettercap --iface wlan1mon
+    wifi.recon
     
