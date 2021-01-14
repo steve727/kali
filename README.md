@@ -3,6 +3,7 @@
     apt-get upgrade
     apt-get dist-upgrade
     
+    sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
     
     sudo apt autoremove -y
@@ -38,7 +39,7 @@
     systemctl get-default
     sudo systemctl set-default multi-user.target
 
-# Simple python http server
+# Simple python http server in any directory
     
     sudo python -m SimpleHTTPServer 80
     
@@ -51,7 +52,7 @@
     iwconfig
     sudo airodump-ng -c 9 wlan1mon
     
-# bettercap
+# bettercap usage
     bettercap --iface wlan1mon
     wifi.recon on
     wifi.show
