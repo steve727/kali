@@ -51,6 +51,11 @@
     Location:
     go/bin/bettercap
     
+    sudo bettercap -caplet https-ui
+    
+    /usr/local/share/bettercap/caplets/http-ui.cap
+    
+    
 # airmon-ng
     airmon-ng check kill
     airmon-ng start wlan1
