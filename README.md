@@ -70,3 +70,8 @@
     set ticker.commands 'clear; net.show; events.show 10'
     net.probe on
     ticker on
+
+# Kismet
+    git clone https://www.kismetwireless.net/git/kismet.git
+        
+        sudo apt-get install build-essential git libmicrohttpd-dev zlib1g-dev libnl-3-dev libnl-genl-3-dev libcap-dev libpcap-dev libncurses5-dev libnm-dev libdw-dev libsqlite3-dev
