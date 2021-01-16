@@ -83,5 +83,5 @@
     ./configure
     make
     
-    
+    sudo usermod -aG kismet $USER
     
