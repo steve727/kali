@@ -12,8 +12,8 @@
     sudo apt clean -y
 
 # Add a normal user
-    useradd -m -G sudo -s /bin/bash steve
-    passwd steve
+    sudo useradd -m -G sudo -s /bin/bash steve
+    sudo passwd steve
     echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers    
     
 # Set static ip
