@@ -54,16 +54,19 @@
     sudo bettercap -caplet https-ui
     
     /usr/local/share/bettercap/caplets/http-ui.cap
-    
-    
+        
 # airmon-ng
-    airmon-ng check kill
-    airmon-ng start wlan1
-    iwconfig
+    sudo airmon-ng check kill
+    sudo airmon-ng start wlan1
+    sudo iwconfig
     sudo airodump-ng -c 9 wlan1mon
+    sudo airodump-ng wlan1mon
     
 # bettercap usage
     bettercap --iface wlan1mon
     wifi.recon on
     wifi.show
     
+    set ticker.commands 'clear; net.show; events.show 10'
+    net.probe on
+    ticker on
