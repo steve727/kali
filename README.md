@@ -63,13 +63,17 @@
     sudo airodump-ng wlan1mon
     
 # bettercap usage
-    bettercap --iface wlan1mon
+    iw wlan1 set txpower fixed 3000
+    bettercap -caplet https-ui --iface wlan1mon
     wifi.recon on
     wifi.show
     
     set ticker.commands 'clear; net.show; events.show 10'
     net.probe on
     ticker on
+    
+    cd /usr/share/bettercap/caplets
+    vi https-ui.cap
 
 # Kismet
     git clone https://www.kismetwireless.net/git/kismet.git
