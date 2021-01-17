@@ -92,3 +92,17 @@
     sudo probequest -i wlan1mon 
     sudo airodump-ng wlan1mon
     
+# hcxtools
+    git clone https://github.com/ZerBea/hcxdumptool.git
+    cd hcxdumptool
+    make
+    sudo make install
+    
+    sudo apt install libcurl4-openssl-dev
+    
+    git clone https://github.com/ZerBea/hcxtools.git
+    cd 
+    make
+    sudo make install
+    
+   
