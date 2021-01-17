@@ -90,4 +90,5 @@
     
     sudo airmon-ng start wlan1
     sudo probequest -i wlan1mon 
+    sudo airodump-ng wlan1mon
     
