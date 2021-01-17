@@ -65,8 +65,11 @@
 # bettercap usage
     iw wlan1 set txpower fixed 3000
     bettercap -caplet https-ui --iface wlan1mon
+  
     wifi.recon on
-    wifi.show
+    set wifi.show.sort clients desc
+    set ticker.commands 'clear; wifi.show'
+    ticker on
     
     set ticker.commands 'clear; net.show; events.show 10'
     net.probe on
