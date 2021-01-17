@@ -105,4 +105,6 @@
     make
     sudo make install
     
+    sudo airmon-ng start wlan1
+    sudo hcxdumptool -i wlan1mon -o galleria.pcapng --enable_status=1
    
