@@ -54,6 +54,23 @@
     sudo bettercap -caplet https-ui
     
     /usr/local/share/bettercap/caplets/http-ui.cap
+    
+    iw wlan1 set txpower fixed 3000
+
+
+    bettercap -caplet https-ui --iface wlan1mon
+
+    wifi.recon on
+    set wifi.show.sort clients desc
+    set ticker.commands 'clear; wifi.show'
+    ticker on
+
+    set ticker.commands 'clear; net.show; events.show 10'
+    net.probe on
+    ticker on
+
+    cd /usr/share/bettercap/caplets
+    vi https-ui.cap
         
 # airmon-ng
     sudo airmon-ng check kill
