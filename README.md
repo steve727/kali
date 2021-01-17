@@ -85,3 +85,8 @@
     
     sudo usermod -aG kismet $USER
     
+# Probequest
+    sudo pip3 install --upgrade probequest
+    
+    sudo airmon-ng start wlan1
+    
