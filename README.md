@@ -89,4 +89,5 @@
     sudo pip3 install --upgrade probequest
     
     sudo airmon-ng start wlan1
+    sudo probequest -i wlan1mon 
     
