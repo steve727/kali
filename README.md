@@ -71,6 +71,8 @@
     set ticker.commands 'clear; wifi.show'
     ticker on
     
+    wifi.recon.channel 11
+    
     set ticker.commands 'clear; net.show; events.show 10'
     net.probe on
     ticker on
