@@ -142,3 +142,10 @@
  
  # seclists
     sudo apt -y install seclists
+    
+ # wifite
+    sudo airmon-ng check kill
+    
+    sudo lshw -c network
+    
+    
