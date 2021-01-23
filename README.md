@@ -147,5 +147,11 @@
     sudo airmon-ng check kill
     
     sudo lshw -c network
+   
+ # mdk4  
+    sudo apt install mdk4
+    
+    sudo systemctl stop NetworkManager.service
+    sudo airmon-ng check kill
     
     
