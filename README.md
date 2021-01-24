@@ -1,13 +1,9 @@
-# Update kali
-    apt-get update
-    apt-get upgrade
-    apt-get dist-upgrade
-    
+# Update kali  
     sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
+    sudo apt dist-upgrade
     
     sudo apt autoremove -y
-    
     sudo apt autoclean -y
     sudo apt clean -y
 
