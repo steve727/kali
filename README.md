@@ -145,8 +145,15 @@
     
  # wifite
     sudo airmon-ng check kill
+    ifconfig wlan0 down     
+    ifconfig wlan1 down 
+    iw reg set GY
+    iwconfig wlan1 txpower 30
+    ifconfig wlan1 up
+    airmon-ng start wlan1
+    iwconfig
     
-    sudo lshw -c network
+    lshw -c network
    
  # mdk4  
     sudo apt install mdk4
