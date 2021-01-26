@@ -157,4 +157,15 @@
     sudo systemctl stop NetworkManager.service
     sudo airmon-ng check kill
     
+ # wpa supplicant
+    vi /etc/wpa_supplicant.conf
+        
+        ctrl_interface=/var/run/wpa_supplicant
+        ctrl_interface_group=0
+        update_config=1
+    	
+    wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
+    wpa_cli
+    
+   
     
