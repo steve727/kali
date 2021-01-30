@@ -77,9 +77,11 @@
     
 # bettercap usage
     iw wlan1 set txpower fixed 3000
+    
     bettercap -caplet https-ui --iface wlan1mon
   
     wifi.recon on
+    
     set wifi.show.sort clients desc
     set ticker.commands 'clear; wifi.show'
     ticker on
@@ -90,8 +92,7 @@
     net.probe on
     ticker on
     
-    cd /usr/share/bettercap/caplets
-    vi https-ui.cap
+    vi /usr/share/bettercap/caplets/https-ui.cap
 
 # Kismet
     git clone https://www.kismetwireless.net/git/kismet.git
