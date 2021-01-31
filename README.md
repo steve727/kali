@@ -6,6 +6,9 @@
     sudo apt autoremove -y
     sudo apt autoclean -y
     sudo apt clean -y
+    
+# Passwordless sudo
+    sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
 
 # Add a normal user
     sudo useradd -m -G sudo -s /bin/bash steve
