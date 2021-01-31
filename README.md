@@ -133,13 +133,11 @@
     cd 
     make
     sudo make install
+   
+    hcxdumptool -i wlan1mon -o testcap.pcapng --enable_status=1
     
-    sudo airmon-ng check kill
-    sudo airmon-ng start wlan1
-    sudo hcxdumptool -i wlan1mon -o galleria.pcapng --enable_status=1
-    
-    sudo hcxpcaptool -E essidlist -I identitylist -U usernamelist -z galleriaHC.16800 galleria.pcapng-0
-    hashcat -m 16800 galleriaHC.16800 -a 0 --kernel-accel=1 -w 4 --force 'topwifipass.txt'
+    sudo hcxpcaptool -E essidlist -I identitylist -U usernamelist testcap.pcapng -o testcap
+    hashcat -m 16800 testcap -a 0 --kernel-accel=1 -w 4 --force 'rockyou.txt'
     
     sudo hcxdumptool -i wlan1mon -o testing.pcapng 
  
