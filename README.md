@@ -79,10 +79,8 @@
     sudo airodump-ng wlan1mon
     
 # bettercap usage
-    iw wlan1 set txpower fixed 3000
+    bettercap -caplet https-ui --iface wlan0mon
     
-    bettercap -caplet https-ui --iface wlan1mon
-  
     wifi.recon on
     
     set wifi.show.sort clients desc
@@ -95,7 +93,12 @@
     net.probe on
     ticker on
     
+    ## Set https user/pw:
     vi /usr/share/bettercap/caplets/https-ui.cap
+    
+    wifi.show.wps
+    
+    
 
 # Kismet
     git clone https://www.kismetwireless.net/git/kismet.git
@@ -144,17 +147,19 @@
     sudo apt -y install seclists
     
  # wifite
-    sudo airmon-ng check kill
-    ifconfig wlan0 down     
-    ifconfig wlan1 down 
+    airmon-ng check kill
+    ifconfig wlan0 down
+    ifconfig wlan1 down
+    airmon-ng
     iw reg set GY
-    iwconfig wlan1 txpower 30
-    ifconfig wlan1 up
-    airmon-ng start wlan1
-    iwconfig
-    
-    lshw -c network
-   
+    iwconfig wlan0 txpower 30
+    macchanger -a wlan0
+    ifconfig wlan0 up
+    airmon-ng start wlan0
+    ifconfig wlan0mon down
+    macchanger -a wlan0mon
+    ifconfig wlan0mon up
+
  # mdk4  
     sudo apt install mdk4
     
