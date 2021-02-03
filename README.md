@@ -1,4 +1,4 @@
-# Update kali  
+# Update Kali (Raspberry Pi4)  
     sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
     sudo apt dist-upgrade
@@ -43,20 +43,11 @@
     sudo python -m SimpleHTTPServer 80
     
 # Bettercap
-    sudo apt update
     sudo apt install golang git build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev
     go get -u github.com/bettercap/bettercap
     
-    Location:
-    go/bin/bettercap
-    
-    sudo bettercap -caplet https-ui
-    
-    /usr/local/share/bettercap/caplets/http-ui.cap
-    
-    iw wlan1 set txpower fixed 3000
-
-
+    /usr/local/share/bettercap/caplets/https-ui.cap
+   
     bettercap -caplet https-ui --iface wlan1mon
 
     wifi.recon on
@@ -97,8 +88,6 @@
     vi /usr/share/bettercap/caplets/https-ui.cap
     
     wifi.show.wps
-    
-    
 
 # Kismet
     git clone https://www.kismetwireless.net/git/kismet.git
@@ -144,13 +133,13 @@
  # seclists
     sudo apt -y install seclists
     
- # wifite
+ # Wifi Interface Settings
+    iwconfig
     airmon-ng check kill
     ifconfig wlan0 down
     ifconfig wlan1 down
-    airmon-ng
     iw reg set GY
-    iwconfig wlan0 txpower 30
+    iw wlan1 set txpower fixed 30 
     macchanger -a wlan0
     ifconfig wlan0 up
     airmon-ng start wlan0
@@ -160,9 +149,6 @@
 
  # mdk4  
     sudo apt install mdk4
-    
-    sudo systemctl stop NetworkManager.service
-    sudo airmon-ng check kill
     
  # wpa supplicant
     vi /etc/wpa_supplicant.conf
@@ -174,5 +160,5 @@
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
     wpa_cli
     
-   
- sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+ # Wordlists
+    sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
