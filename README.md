@@ -34,6 +34,9 @@
         
     sudo chattr +i /etc/resolv.conf
 
+# Install ssh
+    apt install openssh-server
+
 # Boot without gui
     systemctl get-default
     sudo systemctl set-default multi-user.target
