@@ -36,6 +36,13 @@
 
 # Install ssh
     apt install openssh-server
+    mkdir /etc/ssh/default_keys
+    mv /etc/ssh/ssh_host_* /etc/ssh/default_keys/
+    dpkg-reconfigure openssh-server
+    vim /etc/ssh/sshd_config
+    systemctl enable ssh.service
+    systemctl start ssh.service
+    systemctl status ssh.service
 
 # Boot without gui
     systemctl get-default
