@@ -56,12 +56,11 @@
     sudo python -m SimpleHTTPServer 80
     
 # Bettercap
-    sudo apt install golang git build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev
-    go get -u github.com/bettercap/bettercap
+    
     
     /usr/local/share/bettercap/caplets/https-ui.cap
    
-    bettercap -caplet https-ui --iface wlan1mon
+    bettercap -caplet https-ui --iface wlan1
 
     wifi.recon on
     set wifi.show.sort clients desc
@@ -74,6 +73,8 @@
 
     cd /usr/share/bettercap/caplets
     vi https-ui.cap
+    
+
         
 # airmon-ng
     sudo airmon-ng check kill
