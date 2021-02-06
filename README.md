@@ -7,6 +7,9 @@
     sudo apt autoclean -y
     sudo apt clean -y
     
+# Prevent system from sleeping    
+    sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+  
 # Passwordless sudo
     sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
 
