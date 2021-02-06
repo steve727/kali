@@ -132,7 +132,7 @@
     make
     sudo make install
    
-    hcxdumptool -i wlan1mon -o testcap.pcapng --enable_status=1
+    hcxdumptool -i wlan1mon -o test001.pcapng --enable_status=1
     
     sudo hcxpcaptool -E essidlist -I identitylist -U usernamelist testcap.pcapng -o testcap
     hashcat -m 16800 testcap -a 0 --kernel-accel=1 -w 4 --force 'rockyou.txt'
