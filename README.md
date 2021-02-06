@@ -133,7 +133,8 @@
     sudo make install
    
     hcxdumptool -i wlan1mon -o test001.pcapng --enable_status=1 
-    hcxpcaptool -E essidlist -I identitylist001 -U usernamelist001 test001.pcapng -o test001-out
+    hcxpcaptool -E essidlist001 -I identitylist001 -U usernamelist001 test001.pcapng -o output001
+    
     hashcat -m 16800 testcap -a 0 --kernel-accel=1 -w 4 --force 'rockyou.txt'
     
     https://wpa-sec.stanev.org/?
