@@ -132,13 +132,12 @@
     make
     sudo make install
    
-    hcxdumptool -i wlan1mon -o test001.pcapng --enable_status=1
-    
-    sudo hcxpcaptool -E essidlist -I identitylist -U usernamelist testcap.pcapng -o testcap
+    hcxdumptool -i wlan1mon -o test001.pcapng --enable_status=1 
+    hcxpcaptool -E essidlist -I identitylist001 -U usernamelist001 test001.pcapng -o test001-out
     hashcat -m 16800 testcap -a 0 --kernel-accel=1 -w 4 --force 'rockyou.txt'
     
-    sudo hcxdumptool -i wlan1mon -o testing.pcapng 
- 
+    https://wpa-sec.stanev.org/?
+    
  # seclists
     sudo apt -y install seclists
     
