@@ -10,9 +10,18 @@
 # Prevent system from sleeping    
     sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
   
-# Passwordless sudo
+# Password-less sudo
     sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
-
+    
+# ssh public-key auth (as root)
+    ssh-keygen -b 2048 -t rsa 
+    update-rc.d ssh remove
+    update-rc.d -f ssh defaults
+    mkdir ~/.ssh
+    chmod 700 ~/.ssh
+    vi ~/.ssh/authorized_keys
+    chmod 600 ~/.ssh/authorized_keys
+    
 # Add a normal user
     sudo useradd -m -G sudo -s /bin/bash steve
     sudo passwd steve
