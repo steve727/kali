@@ -1,4 +1,4 @@
-## Update Kali (Raspberry Pi4)  
+### Update Kali (Raspberry Pi4)  
     sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
     sudo apt dist-upgrade
@@ -7,13 +7,13 @@
     sudo apt autoclean -y
     sudo apt clean -y
     
-## Prevent system from sleeping    
+### Prevent system from sleeping    
     sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
   
-## Password-less sudo
+### Password-less sudo
     sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
     
-## ssh public-key auth (as root)
+### ssh public-key auth (as root)
     ssh-keygen -b 2048 -t rsa 
     update-rc.d ssh remove
     update-rc.d -f ssh defaults
@@ -22,12 +22,12 @@
     vi ~/.ssh/authorized_keys
     chmod 600 ~/.ssh/authorized_keys
     
-## Add a normal user
+### Add a normal user
     sudo useradd -m -G sudo -s /bin/bash steve
     sudo passwd steve
     echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers    
     
-## Set static ip
+### Set static ip
     sudo vim /etc/network/interfaces
 
         auto eth0
@@ -46,7 +46,7 @@
         
     sudo chattr +i /etc/resolv.conf
 
-## Install ssh
+### ssh
     apt install openssh-server
     mkdir /etc/ssh/default_keys
     mv /etc/ssh/ssh_host_* /etc/ssh/default_keys/
@@ -56,15 +56,15 @@
     systemctl start ssh.service
     systemctl status ssh.service
 
-## Boot without gui
+### boot without gui
     systemctl get-default
     sudo systemctl set-default multi-user.target
 
-## run a simple python http server from any directory
+### run a simple python http server from any directory
     
     sudo python -m SimpleHTTPServer 80
     
-## Bettercap
+### Bettercap
     vim /usr/local/share/bettercap/caplets/https-ui.cap
    
     bettercap -caplet https-ui --iface wlan1
@@ -82,14 +82,14 @@
     wifi.recon.channel 11
     wifi.show.wps
   
-## airmon-ng
+### airmon-ng
     sudo airmon-ng check kill
     sudo airmon-ng start wlan1
     sudo iwconfig
     sudo airodump-ng -c 9 wlan1mon
     sudo airodump-ng wlan1mon
     
-## Kismet
+### kismet
     git clone https://www.kismetwireless.net/git/kismet.git 
     
     sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev /
@@ -168,7 +168,7 @@
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
     wpa_cli
     
- ### Wordlists
+ ### wordlists
     sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
     
  ### wifite
