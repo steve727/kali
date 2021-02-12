@@ -92,10 +92,11 @@
 ## Kismet
     git clone https://www.kismetwireless.net/git/kismet.git 
     
-    sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev libcap-dev libpcap-dev 
-    libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler protobuf-c-compiler libsensors4-dev 
-    libusb-1.0-0-dev python3 python3-setuptools python3-protobuf python3-requests python3-numpy python3-serial python3-usb python3-dev 
-    python3-websockets librtlsdr0 libubertooth-dev libbtbb-dev libmicrohttpd-dev  
+    sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev /
+    / libcap-dev libpcap-dev libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler /
+    / protobuf-c-compiler libsensors4-dev libusb-1.0-0-dev python3 python3-setuptools python3-protobuf /
+    python3-requests python3-numpy python3-serial python3-usb python3-dev python3-websockets librtlsdr0 /
+    / libubertooth-dev libbtbb-dev libmicrohttpd-dev  
     
     cd kismet
     ./configure
@@ -125,10 +126,10 @@
     
     hashcat -m 22000 xname-out -a 0 -w 3 -d 2 'rockyou.txt'
     
- # seclists
+ ### seclists
     sudo apt -y install seclists
     
- # wifi interface settings
+ ### wifi interface settings
     iwconfig
     airmon-ng check kill
     ifconfig wlan0 down
@@ -142,7 +143,7 @@
     macchanger -a wlan0mon
     ifconfig wlan0mon up
 
- # mdk4  
+ ### mdk4  
     sudo apt install mdk4
     
     ifconfig wlan1 down
@@ -157,8 +158,8 @@
     mdk4 mon1 e -t [TARGET] -s 100
     mdk4 mon2 e -t [TARGET] -s 100
     
- # wpa supplicant
-    vi /etc/wpa_supplicant.conf
+ ### wpa supplicant
+    vim /etc/wpa_supplicant.conf
         
         ctrl_interface=/var/run/wpa_supplicant
         ctrl_interface_group=0
@@ -167,8 +168,8 @@
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
     wpa_cli
     
- # Wordlists
+ ### Wordlists
     sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
     
- # wifite
-    wifite --wps --ignore-locks --crack
+ ### wifite
+    wifite --wps --ignore-locks
