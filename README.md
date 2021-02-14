@@ -17,6 +17,9 @@
 ### Password-less sudo
     sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
 
+### permit root login
+    sudo apt install kali-root-login
+
 ### ssh public-key auth (as root)
     ssh-keygen -b 2048 -t rsa 
     update-rc.d ssh remove
