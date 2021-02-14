@@ -176,3 +176,12 @@
     
  ### wifite
     wifite --wps --ignore-locks
+    
+ ### crowbar
+    apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
+    git clone https://github.com/galkan/crowbar
+    cd crowbar/
+    pip3 install -r requirements.txt
+    
+    
+    
