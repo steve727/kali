@@ -162,14 +162,12 @@
     mdk4 mon2 e -t [TARGET] -s 100
     
  ### wpa supplicant
-    vim /etc/wpa_supplicant.conf
-        
-        ctrl_interface=/var/run/wpa_supplicant
-        ctrl_interface_group=0
-        update_config=1
-    	
+ ```vim /etc/wpa_supplicant.conf
+    ctrl_interface=/var/run/wpa_supplicant
+    ctrl_interface_group=0
+    update_config=1
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
-    wpa_cli
+    wpa_cli```
     
  ### wordlists
     sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
@@ -182,6 +180,3 @@
     git clone https://github.com/galkan/crowbar
     cd crowbar/
     pip3 install -r requirements.txt
-    
-    
-    
