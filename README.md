@@ -64,6 +64,8 @@
     sudo python -m SimpleHTTPServer 80
 
 ### Bettercap
+    wget http://old.kali.org/kali/pool/main/libp/libpcap/libpcap0.8_1.9.1-4_amd64.deb && dpkg -i libpcap0.8_1.9.1-4_amd64.deb
+    
     vim /usr/local/share/bettercap/caplets/https-ui.cap
    
     bettercap -caplet https-ui --iface wlan1
