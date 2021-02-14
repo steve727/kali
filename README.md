@@ -10,13 +10,15 @@
 ``` git clone https://github.com/aircrack-ng/rtl8812au
     cd rtl8812au
     make && make install
-```
+```    
 ### Prevent system from sleeping    
 ``` sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
+
 ### Password-less sudo
 ``` sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
-```    
+```
+
 ### ssh public-key auth (as root)
 ``` ssh-keygen -b 2048 -t rsa 
     update-rc.d ssh remove
@@ -25,25 +27,27 @@
     chmod 700 ~/.ssh
     vi ~/.ssh/authorized_keys
     chmod 600 ~/.ssh/authorized_keys
-```    
+```
+
 ### Add a normal user
 ``` sudo useradd -m -G sudo -s /bin/bash steve
     sudo passwd steve
     echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers    
-```    
+```
+
 ### Set static ip
-``` sudo vim /etc/network/interfaces
-        auto eth0
-        iface eth0 inet static
-        address 192.168.254.9/24
-        gateway 192.168.254.254
+``` vim /etc/network/interfaces
+    auto eth0
+    iface eth0 inet static
+    address 192.168.254.9/24
+    gateway 192.168.254.254
     sudo systemctl restart networking.service
-    ip a
     sudo rm /etc/resolv.conf
     sudo vim /etc/resolv.conf
-        nameserver 8.8.8.8
+    nameserver 8.8.8.8
     sudo chattr +i /etc/resolv.conf
 ```
+
 ### ssh
 ``` apt install openssh-server
     mkdir /etc/ssh/default_keys
@@ -54,15 +58,18 @@
     systemctl start ssh.service
     systemctl status ssh.service
 ```
+
 ### boot without gui
-    systemctl get-default
+``` systemctl get-default
     sudo systemctl set-default multi-user.target
+```
 
 ### run a simple python http server from any directory   
-    sudo python -m SimpleHTTPServer 80
-    
+``` sudo python -m SimpleHTTPServer 80
+```
+
 ### Bettercap
-    vim /usr/local/share/bettercap/caplets/https-ui.cap
+``` vim /usr/local/share/bettercap/caplets/https-ui.cap
    
     bettercap -caplet https-ui --iface wlan1
     
@@ -78,15 +85,18 @@
     
     wifi.recon.channel 11
     wifi.show.wps
-  
+```
+
 ### airmon-ng
-    sudo airmon-ng check kill
+``` sudo airmon-ng check kill
     sudo airmon-ng start wlan0
     sudo iwconfig
     sudo airodump-ng -c 9 wlan0mon
     sudo airodump-ng wlan1mon
+```
+
 ### kismet
-    git clone https://www.kismetwireless.net/git/kismet.git 
+``` git clone https://www.kismetwireless.net/git/kismet.git 
     sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev /
     / libcap-dev libpcap-dev libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler /
     / protobuf-c-compiler libsensors4-dev libusb-1.0-0-dev python3 python3-setuptools python3-protobuf /
@@ -95,7 +105,9 @@
     cd kismet
     ./configure
     make
-    sudo usermod -aG kismet $USER   
+    sudo usermod -aG kismet $USER
+```
+
 ### Probequest
     sudo pip3 install --upgrade probequest    
     sudo airmon-ng start wlan1
