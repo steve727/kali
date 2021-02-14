@@ -1,11 +1,15 @@
-### Update Kali (Raspberry Pi4)  
+### Update Kali
     sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
     sudo apt dist-upgrade
-    
     sudo apt autoremove -y
     sudo apt autoclean -y
     sudo apt clean -y
+    
+### alfa awus036ach rtl8812au driver
+    git clone https://github.com/aircrack-ng/rtl8812au
+    cd rtl8812au
+    make && make install
     
 ### Prevent system from sleeping    
     sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
@@ -60,8 +64,7 @@
     systemctl get-default
     sudo systemctl set-default multi-user.target
 
-### run a simple python http server from any directory
-    
+### run a simple python http server from any directory   
     sudo python -m SimpleHTTPServer 80
     
 ### Bettercap
