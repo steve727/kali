@@ -71,17 +71,17 @@
     bettercap -caplet https-ui --iface wlan1
     
     wifi.recon on
-    set wifi.show.sort clients desc
+    set wifi.show sort
     set ticker.commands 'clear; wifi.show'
     ticker on
     
-    net.recon.on
+    net.recon on
     set ticker.commands 'clear; net.show; events.show 10'
     net.probe on
     ticker on
     
     wifi.recon.channel 11
-    wifi.show.wps
+    wifi.show.wps BSSID
 
 ### airmon-ng
     sudo airmon-ng check kill
