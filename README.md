@@ -10,10 +10,10 @@
 ``` git clone https://github.com/aircrack-ng/rtl8812au
     cd rtl8812au
     make && make install
-```    
+```
 ### Prevent system from sleeping    
-``` sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-```  
+    sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
 ### Password-less sudo
     sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
     
