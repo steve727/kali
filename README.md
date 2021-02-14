@@ -6,11 +6,13 @@
     sudo apt autoclean -y
     sudo apt clean -y
 ```
+
 ### alfa awus036ach rtl8812au driver
 ``` git clone https://github.com/aircrack-ng/rtl8812au
     cd rtl8812au
     make && make install
-```    
+``` 
+
 ### Prevent system from sleeping    
 ``` sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
@@ -109,10 +111,11 @@
 ```
 
 ### Probequest
-    sudo pip3 install --upgrade probequest    
+``` sudo pip3 install --upgrade probequest    
     sudo airmon-ng start wlan1
     sudo probequest -i wlan1mon 
-    sudo airodump-ng wlan1mon   
+    sudo airodump-ng wlan1mon
+```
 ### hcxdump / hcxtools
     git clone https://github.com/ZerBea/hcxdumptool.git
     cd hcxdumptool
@@ -153,7 +156,8 @@
     ifconfig mon2 up
     mdk4 mon0 e -t [TARGET] -s 100
     mdk4 mon1 e -t [TARGET] -s 100
-    mdk4 mon2 e -t [TARGET] -s 100    
+    mdk4 mon2 e -t [TARGET] -s 100
+    
 ### wpa supplicant
 ``` vim /etc/wpa_supplicant.conf
     ctrl_interface=/var/run/wpa_supplicant
@@ -165,9 +169,11 @@
 ### wordlists
 ``` sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 ```
+
 ### wifite
 ``` wifite --wps --ignore-locks
 ```
+
 ### crowbar
 ``` apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
     git clone https://github.com/galkan/crowbar
