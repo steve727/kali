@@ -1,4 +1,4 @@
-``` Update Kali
+### Update Kali
     sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
     sudo apt dist-upgrade
@@ -7,36 +7,32 @@
     sudo apt clean -y
 
 ### alfa awus036ach rtl8812au driver
-``` git clone https://github.com/aircrack-ng/rtl8812au
+    git clone https://github.com/aircrack-ng/rtl8812au
     cd rtl8812au
     make && make install 
 
 ### Prevent system from sleeping    
-``` sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+    sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
-```
 ### Password-less sudo
-``` sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
+    sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
 
-```
 ### ssh public-key auth (as root)
-``` ssh-keygen -b 2048 -t rsa 
+    ssh-keygen -b 2048 -t rsa 
     update-rc.d ssh remove
     update-rc.d -f ssh defaults
     mkdir ~/.ssh
     chmod 700 ~/.ssh
     vi ~/.ssh/authorized_keys
     chmod 600 ~/.ssh/authorized_keys
-```
 
 ### Add a normal user
-``` sudo useradd -m -G sudo -s /bin/bash steve
+    sudo useradd -m -G sudo -s /bin/bash steve
     sudo passwd steve
-    echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers    
-```
+    echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 ### Set static ip
-``` vim /etc/network/interfaces
+    vim /etc/network/interfaces
     auto eth0
     iface eth0 inet static
     address 192.168.254.9/24
@@ -46,10 +42,9 @@
     sudo vim /etc/resolv.conf
     nameserver 8.8.8.8
     sudo chattr +i /etc/resolv.conf
-```
 
 ### ssh
-``` apt install openssh-server
+    apt install openssh-server
     mkdir /etc/ssh/default_keys
     mv /etc/ssh/ssh_host_* /etc/ssh/default_keys/
     dpkg-reconfigure openssh-server
@@ -57,19 +52,16 @@
     systemctl enable ssh.service
     systemctl start ssh.service
     systemctl status ssh.service
-```
 
 ### boot without gui
-``` systemctl get-default
+    systemctl get-default
     sudo systemctl set-default multi-user.target
-```
 
 ### run a simple python http server from any directory   
-``` sudo python -m SimpleHTTPServer 80
-```
+    sudo python -m SimpleHTTPServer 80
 
 ### Bettercap
-``` vim /usr/local/share/bettercap/caplets/https-ui.cap
+    vim /usr/local/share/bettercap/caplets/https-ui.cap
    
     bettercap -caplet https-ui --iface wlan1
     
@@ -85,18 +77,16 @@
     
     wifi.recon.channel 11
     wifi.show.wps
-```
 
 ### airmon-ng
-``` sudo airmon-ng check kill
+    sudo airmon-ng check kill
     sudo airmon-ng start wlan0
     sudo iwconfig
     sudo airodump-ng -c 9 wlan0mon
     sudo airodump-ng wlan1mon
-```
 
 ### kismet
-``` git clone https://www.kismetwireless.net/git/kismet.git 
+    git clone https://www.kismetwireless.net/git/kismet.git 
     sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev /
     / libcap-dev libpcap-dev libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler /
     / protobuf-c-compiler libsensors4-dev libusb-1.0-0-dev python3 python3-setuptools python3-protobuf /
@@ -106,16 +96,15 @@
     ./configure
     make
     sudo usermod -aG kismet $USER
-```
 
 ### Probequest
-``` sudo pip3 install --upgrade probequest    
+    sudo pip3 install --upgrade probequest    
     sudo airmon-ng start wlan1
     sudo probequest -i wlan1mon 
     sudo airodump-ng wlan1mon
-```
+
 ### hcxdump / hcxtools
-``` git clone https://github.com/ZerBea/hcxdumptool.git
+    git clone https://github.com/ZerBea/hcxdumptool.git
     cd hcxdumptool
     make
     sudo make install
@@ -127,7 +116,7 @@
     hcxdumptool -i wlan0 -o xname.pcapng --enable_status=1 
     hcxpcaptool -E xname-essid -I xidentity -U xusers xname.pcapng -o xname-out
     hashcat -m 22000 xname-out -a 0 -w 3 -d 2 'rockyou.txt'
-```
+
 ### seclists
     sudo apt -y install seclists
     
@@ -160,25 +149,21 @@
     mdk4 mon2 e -t [TARGET] -s 100
     
 ### wpa supplicant
-``` vim /etc/wpa_supplicant.conf
+    vim /etc/wpa_supplicant.conf
     ctrl_interface=/var/run/wpa_supplicant
     ctrl_interface_group=0
     update_config=1
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
-    wpa_cli
-```    
+    wpa_cli  
 
 ### wordlists
-``` sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
-```
+    sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 
 ### wifite
-``` wifite --wps --ignore-locks
-```
-
+    wifite --wps --ignore-locks
+    
 ### crowbar
-``` apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
+    apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
     git clone https://github.com/galkan/crowbar
     cd crowbar/
     pip3 install -r requirements.txt
-```
