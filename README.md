@@ -5,53 +5,47 @@
     sudo apt autoremove -y
     sudo apt autoclean -y
     sudo apt clean -y
-```    
+```
 ### alfa awus036ach rtl8812au driver
 ``` git clone https://github.com/aircrack-ng/rtl8812au
     cd rtl8812au
     make && make install
 ```
 ### Prevent system from sleeping    
-    sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-
+``` sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
 ### Password-less sudo
-    sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
-    
+``` sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
+```    
 ### ssh public-key auth (as root)
-    ssh-keygen -b 2048 -t rsa 
+``` ssh-keygen -b 2048 -t rsa 
     update-rc.d ssh remove
     update-rc.d -f ssh defaults
     mkdir ~/.ssh
     chmod 700 ~/.ssh
     vi ~/.ssh/authorized_keys
     chmod 600 ~/.ssh/authorized_keys
-    
+```    
 ### Add a normal user
-    sudo useradd -m -G sudo -s /bin/bash steve
+``` sudo useradd -m -G sudo -s /bin/bash steve
     sudo passwd steve
     echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers    
-    
+```    
 ### Set static ip
-    sudo vim /etc/network/interfaces
-
+``` sudo vim /etc/network/interfaces
         auto eth0
         iface eth0 inet static
         address 192.168.254.9/24
         gateway 192.168.254.254
-        
     sudo systemctl restart networking.service
-    
-    ip a 
-    
+    ip a
     sudo rm /etc/resolv.conf
     sudo vim /etc/resolv.conf
-    
         nameserver 8.8.8.8
-        
     sudo chattr +i /etc/resolv.conf
-
+```
 ### ssh
-    apt install openssh-server
+``` apt install openssh-server
     mkdir /etc/ssh/default_keys
     mv /etc/ssh/ssh_host_* /etc/ssh/default_keys/
     dpkg-reconfigure openssh-server
@@ -59,7 +53,7 @@
     systemctl enable ssh.service
     systemctl start ssh.service
     systemctl status ssh.service
-
+```
 ### boot without gui
     systemctl get-default
     sudo systemctl set-default multi-user.target
@@ -160,9 +154,11 @@
 ``` sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 ```
 ### wifite
-    wifite --wps --ignore-locks
+``` wifite --wps --ignore-locks
+```
 ### crowbar
 ``` apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
     git clone https://github.com/galkan/crowbar
     cd crowbar/
     pip3 install -r requirements.txt
+```
