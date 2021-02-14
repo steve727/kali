@@ -1,11 +1,11 @@
 ### Update Kali
-    sudo apt update && sudo apt upgrade -y 
+`   sudo apt update && sudo apt upgrade -y 
     sudo apt update && sudo apt full-upgrade -y
     sudo apt dist-upgrade
     sudo apt autoremove -y
     sudo apt autoclean -y
     sudo apt clean -y
-    
+`    
 ### alfa awus036ach rtl8812au driver
     git clone https://github.com/aircrack-ng/rtl8812au
     cd rtl8812au
@@ -145,38 +145,37 @@
     ifconfig wlan0mon down
     macchanger -a wlan0mon
     ifconfig wlan0mon up
-
- ### mdk4  
-    sudo apt install mdk4
+### mdk4  
+``` sudo apt install mdk4
     
-    ifconfig wlan1 down
+    ifconfig wlan0 down
     iw phy1 interface add mon0 type monitor
     iw phy1 interface add mon1 type monitor
     iw phy1 interface add mon2 type monitor
-    iw wlan1 del
+    iw wlan0 del
     ifconfig mon0 up
     ifconfig mon1 up
     ifconfig mon2 up
     mdk4 mon0 e -t [TARGET] -s 100
     mdk4 mon1 e -t [TARGET] -s 100
-    mdk4 mon2 e -t [TARGET] -s 100
-    
- ### wpa supplicant
- ```vim /etc/wpa_supplicant.conf
+    mdk4 mon2 e -t [TARGET] -s 100 
+```     
+### wpa supplicant
+``` vim /etc/wpa_supplicant.conf
     ctrl_interface=/var/run/wpa_supplicant
     ctrl_interface_group=0
     update_config=1
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
-    wpa_cli```
-    
- ### wordlists
-    sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
-    
- ### wifite
+    wpa_cli
+```    
+### wordlists
+``` sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+```
+### wifite
     wifite --wps --ignore-locks
-    
- ### crowbar
-    apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
+
+### crowbar
+``` apt install -y nmap openvpn freerdp2-x11 tigervnc-viewer python3 python3-pip
     git clone https://github.com/galkan/crowbar
     cd crowbar/
-    pip3 install -r requirements.txt
+    pip3 install -r requirements.txt ```
