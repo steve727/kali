@@ -15,12 +15,12 @@
 
 ### Prevent system from sleeping    
 ``` sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-```
 
+```
 ### Password-less sudo
 ``` sudo apt install -y kali-grant-root && sudo dpkg-reconfigure kali-grant-root
-```
 
+```
 ### ssh public-key auth (as root)
 ``` ssh-keygen -b 2048 -t rsa 
     update-rc.d ssh remove
@@ -117,7 +117,7 @@
     sudo airodump-ng wlan1mon
 ```
 ### hcxdump / hcxtools
-    git clone https://github.com/ZerBea/hcxdumptool.git
+``` git clone https://github.com/ZerBea/hcxdumptool.git
     cd hcxdumptool
     make
     sudo make install
@@ -129,8 +129,10 @@
     hcxdumptool -i wlan0 -o xname.pcapng --enable_status=1 
     hcxpcaptool -E xname-essid -I xidentity -U xusers xname.pcapng -o xname-out
     hashcat -m 22000 xname-out -a 0 -w 3 -d 2 'rockyou.txt'
+```
 ### seclists
     sudo apt -y install seclists
+    
 ### wifi interface settings
     iwconfig
     airmon-ng check kill
@@ -144,6 +146,7 @@
     ifconfig wlan0mon down
     macchanger -a wlan0mon
     ifconfig wlan0mon up
+
 ### mdk4  
     sudo apt install mdk4    
     ifconfig wlan0 down
@@ -166,6 +169,7 @@
     wpa_supplicant -Dwext -iwlan1 -c/etc/wpa_supplicant.conf –B
     wpa_cli
 ```    
+
 ### wordlists
 ``` sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 ```
