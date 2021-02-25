@@ -6,9 +6,9 @@
     sudo apt autoclean -y
     sudo apt clean -y
 
-### alfa awus036ach rtl8812au driver
-    git clone https://github.com/aircrack-ng/rtl8812au
-    cd rtl8812au
+### alfa rtl8814au driver
+    https://github.com/aircrack-ng/rtl8814au
+    cd rtl8814au
     make && make install 
 
 ### Prevent system from sleeping    
