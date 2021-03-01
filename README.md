@@ -5,12 +5,7 @@
     sudo apt autoremove -y
     sudo apt autoclean -y
     sudo apt clean -y
-
-### alfa rtl8814au driver
-    https://github.com/aircrack-ng/rtl8814au
-    cd rtl8814au
-    make && make install 
-
+    
 ### Prevent system from sleeping    
     sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
