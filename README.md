@@ -92,12 +92,13 @@
     sudo airodump-ng wlan1mon
 
 ### kismet
-    git clone https://www.kismetwireless.net/git/kismet.git 
     sudo apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev \
     libcap-dev libpcap-dev libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler \
     protobuf-c-compiler libsensors4-dev libusb-1.0-0-dev python3 python3-setuptools python3-protobuf \
     python3-requests python3-numpy python3-serial python3-usb python3-dev python3-websockets librtlsdr0 \
     libubertooth-dev libbtbb-dev libmicrohttpd-dev  
+    
+    git clone https://www.kismetwireless.net/git/kismet.git 
     cd kismet
     ./configure
     make
@@ -116,9 +117,10 @@
     sudo make install
     sudo apt-get install libcurl4-openssl-dev libssl-dev pkg-config zlib1g-dev
     git clone https://github.com/ZerBea/hcxtools.git
-    cd 
+    cd hcxtools
     make
     sudo make install
+    
     hcxdumptool -i wlan0 -o xname.pcapng --enable_status=1 
     hcxpcaptool -E xname-essid -I xidentity -U xusers xname.pcapng -o xname-out
     hashcat -m 22000 xname-out -a 0 -w 3 -d 2 'rockyou.txt'
